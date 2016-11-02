@@ -1,6 +1,7 @@
 import React from 'react';
 
 import TodoList from 'TodoList';
+import AddTodo from 'AddTodo';
 
 class TodoApp extends React.Component {
     constructor(props) {
@@ -24,12 +25,17 @@ class TodoApp extends React.Component {
         }
     }
 
+    handleAddTodo (text) {
+        console.log('new todo: %s', text);
+    }
+
     render () {
         let {todos} = this.state;
 
         return (
             <div>
                 <TodoList todos={todos} />
+                <AddTodo onAddTodo={this.handleAddTodo} />
             </div>
         );
     }
