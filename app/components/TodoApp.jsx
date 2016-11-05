@@ -53,6 +53,16 @@ class TodoApp extends Component {
         });
     }
 
+    handleToggle (id) {
+        const updatedTodos = this.state.todos.map((todo) => {
+            (todo.id === id) ? todo.completed = !todo.completed : null;
+
+            return todo;
+        });
+
+        this.setState({todos: updatedTodos});
+    }
+
     render () {
         const {todos} = this.state;
 
@@ -60,7 +70,7 @@ class TodoApp extends Component {
             <div>
                 <h1>Todo App</h1>
                 <TodoSearch onSearch={this.handleSearch.bind(this)} />
-                <TodoList todos={todos} />
+                <TodoList todos={todos} onToggle={this.handleToggle.bind(this)} />
                 <AddTodo onAddTodo={this.handleAddTodo.bind(this)} />
             </div>
         );
