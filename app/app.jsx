@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {render} from 'react-dom';
 import {Route, Router, IndexRoute, hashHistory} from 'react-router';
 
 import TodoApp from 'TodoApp';
@@ -8,9 +8,9 @@ import TodoApp from 'TodoApp';
 $(document).foundation();
 
 // require styles with loaders (style, css, sass)
-require('style!css!sass!applicationStyles');
+import 'style!css!sass!applicationStyles';
 
-ReactDOM.render(
+render (
     <TodoApp />,
     document.getElementById('app')
 );

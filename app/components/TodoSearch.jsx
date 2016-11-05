@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-class TodoSearch extends React.Component {
+class TodoSearch extends Component {
     handleSearch () {
         let showCompleted = this.refs.showCompleted.checked;
         let searchText = this.refs.searchText.value;

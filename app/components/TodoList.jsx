@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {Component} from 'react';
 
 import TodoItem from 'TodoItem';
 
-class TodoList extends React.Component {
+class TodoList extends Component {
 
     render () {
         let {todos} = this.props;

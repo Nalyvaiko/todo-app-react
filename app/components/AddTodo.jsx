@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-class AddTodo extends React.Component {
+class AddTodo extends Component {
     handleSubmit (e) {
         e.preventDefault();
 

@@ -1,11 +1,11 @@
-import React from 'react';
+import React, {Component} from 'react';
 import uuid from 'node-uuid';
 
 import TodoList from 'TodoList';
 import AddTodo from 'AddTodo';
 import TodoSearch from 'TodoSearch';
 
-class TodoApp extends React.Component {
+class TodoApp extends Component {
     constructor(props) {
         super(props);
         this.state = {
