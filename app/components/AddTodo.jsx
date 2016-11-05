@@ -4,7 +4,7 @@ class AddTodo extends Component {
     handleSubmit (e) {
         e.preventDefault();
 
-        let todoText = this.refs.todoText.value;
+        const todoText = this.refs.todoText.value;
         if (todoText.length > 0) {
             this.refs.todoText.value = '';
             this.props.onAddTodo(todoText);
