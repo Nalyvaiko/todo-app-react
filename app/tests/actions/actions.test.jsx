@@ -1,5 +1,5 @@
-import expect  from 'expect';
-import * as actions from 'actions';
+import expect from 'expect';
+import actions from 'actions';
 
 describe('Actions', () => {
     it('should generate new action', () => {
