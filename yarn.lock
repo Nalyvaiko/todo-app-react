@@ -2546,6 +2546,10 @@ loader-utils@^0.2.11, loader-utils@^0.2.15, loader-utils@^0.2.5, loader-utils@^0
     json5 "^0.5.0"
     object-assign "^4.0.1"
 
+lodash-es@^4.2.1:
+  version "4.16.6"
+  resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.16.6.tgz#c8552faedaa4d1d591de8da9b3980ef1c52efa08"
+
 lodash._createcompounder@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/lodash._createcompounder/-/lodash._createcompounder-3.0.0.tgz#5dd2cb55372d6e70e0e2392fb2304d6631091075"
@@ -2591,7 +2595,7 @@ lodash@^3.8.0:
   version "3.10.1"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
 
-lodash@^4.0.0, lodash@^4.14.0, lodash@^4.2.0, lodash@~4.16.4:
+lodash@^4.0.0, lodash@^4.14.0, lodash@^4.2.0, lodash@^4.2.1, lodash@~4.16.4:
   version "4.16.6"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.16.6.tgz#d22c9ac660288f3843e16ba7d2b5d06cca27d777"
 
@@ -2606,7 +2610,7 @@ longest@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/longest/-/longest-1.0.1.tgz#30a0b2da38f73770e8294a0d22e6625ed77d0097"
 
-loose-envify@^1.0.0, loose-envify@^1.2.0:
+loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.2.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.3.0.tgz#6b26248c42f6d4fa4b0d8542f78edfcde35642a8"
   dependencies:
@@ -3579,6 +3583,15 @@ reduce-function-call@^1.0.1:
   dependencies:
     balanced-match "~0.1.0"
 
+redux:
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/redux/-/redux-3.6.0.tgz#887c2b3d0b9bd86eca2be70571c27654c19e188d"
+  dependencies:
+    lodash "^4.2.1"
+    lodash-es "^4.2.1"
+    loose-envify "^1.1.0"
+    symbol-observable "^1.0.2"
+
 regenerate@^1.2.1:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/regenerate/-/regenerate-1.3.1.tgz#0300203a5d2fdcf89116dce84275d011f5903f33"
@@ -3992,6 +4005,10 @@ svgo@^0.7.0:
     mkdirp "~0.5.1"
     sax "~1.2.1"
     whet.extend "~0.9.9"
+
+symbol-observable@^1.0.2:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.0.4.tgz#29bf615d4aa7121bdd898b22d4b3f9bc4e2aa03d"
 
 tapable@^0.1.8, tapable@~0.1.8:
   version "0.1.10"

@@ -1,7 +1,7 @@
 import expect from 'expect';
 import deepf from 'deep-freeze-strict';
 
-import reducers from 'reducers';
+import {searchTextReducer, showCompletedReducer, todosReducer} from 'reducers';
 
 describe('Reducers', () => {
     describe('searchTextReducer', () => {
@@ -10,7 +10,7 @@ describe('Reducers', () => {
                 type: 'SET_SEARCH_TEXT',
                 searchText: 'Dog'
             };
-            const res = reducers.searchTextReducer(deepf(''), deepf(action));
+            const res = searchTextReducer(deepf(''), deepf(action));
 
             expect(res).toEqual(action.searchText);
         });
@@ -21,7 +21,7 @@ describe('Reducers', () => {
             const action = {
                 type: 'TOGGLE_SHOW_COMPLETED'
             };
-            const res = reducers.showCompletedReducer(deepf(false), deepf(action));
+            const res = showCompletedReducer(deepf(false), deepf(action));
 
             expect(res).toBe(true);
         });
@@ -33,7 +33,7 @@ describe('Reducers', () => {
                 type: 'ADD_TODO',
                 text: 'Walk the dog'
             };
-            const res = reducers.todosReducer(deepf([]), deepf(action));
+            const res = todosReducer(deepf([]), deepf(action));
 
             expect(res.length).toEqual(1);
             expect(res[0].text).toEqual(action.text);
@@ -53,7 +53,7 @@ describe('Reducers', () => {
                 type: 'TOGGLE_TODO',
                 id: '123'
             };
-            const res = reducers.todosReducer(deepf(state), deepf(action));
+            const res = todosReducer(deepf(state), deepf(action));
 
             expect(res[0].completed).toEqual(false);
             expect(res[0].completedAt).toEqual(undefined);
