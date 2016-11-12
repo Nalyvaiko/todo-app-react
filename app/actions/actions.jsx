@@ -11,6 +11,10 @@ const actions = {
         return {type: 'ADD_TODO', text};
     },
 
+    addTodos(todos) {
+        return {type: 'ADD_TODOS', todos};
+    },
+
     toggleTodo(id) {
         return {type: 'TOGGLE_TODO', id};
     }
