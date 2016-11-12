@@ -10,10 +10,6 @@ import TodoApp from 'TodoApp';
 import TodoList from 'TodoList';
 
 describe('TodoApp', () => {
-    beforeEach(() => {
-        localStorage.removeItem('todos');
-    });
-
     it('should exist', () => {
         expect(TodoApp).toExist();
     });

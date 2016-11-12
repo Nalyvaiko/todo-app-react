@@ -12,14 +12,10 @@ store.subscribe(() => {
     console.log('New state', store.getState());
 });
 
-store.dispatch(actions.addTodo('Clean the yard'));
-store.dispatch(actions.setSearchText('yard'));
-store.dispatch(actions.toggleShowCompleted());
-
 // Load foundation
 $(document).foundation();
 
-// require styles with loaders (style, css, sass)
+// App css
 import 'style!css!sass!applicationStyles';
 
 render (
