@@ -12,7 +12,7 @@ export class AddTodo extends Component {
 
             const {dispatch} = this.props;
 
-            dispatch(actions.addTodo(todoText));
+            dispatch(actions.startAddTodo(todoText));
         } else {
             this.refs.todoText.focus();
         }

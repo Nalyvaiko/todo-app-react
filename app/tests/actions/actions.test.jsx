@@ -1,5 +1,10 @@
+import configureMockStore from 'redux-mock-store';
+import thunk from 'redux-thunk';
 import expect from 'expect';
+
 import actions from 'actions';
+
+const createMockStore = configureMockStore([thunk]); // Passing array of middleware
 
 describe('Actions', () => {
     it('should generate new action', () => {
@@ -15,11 +20,34 @@ describe('Actions', () => {
     it('should generate add todo action', () => {
         const action = {
             type: 'ADD_TODO',
-            text: 'Thing to do'
+            todo: {
+                id: '123abc',
+                text: 'Thing to do',
+                completed: false,
+                createdAt: 0
+            }
         };
 
-        const res = actions.addTodo(action.text);
+        const res = actions.addTodo(action.todo);
         expect(res).toEqual(action);
+    });
+
+    it('should create todo and dispatch ADD_TODO', (done) => {
+        const store = createMockStore({});
+        const todoText = 'My todo item';
+
+        store.dispatch(actions.startAddTodo(todoText)).then(() => {
+            const action = store.getActions();
+
+            expect(action[0]).toInclude({
+                type: 'ADD_TODO'
+            });
+            expect(action[0].todo).toInclude({
+                text: todoText
+            });
+
+            done();
+        }).catch(done);
     });
 
     it('should generate add todos action object', () => {
