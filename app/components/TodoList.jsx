@@ -9,11 +9,13 @@ export class TodoList extends Component {
         const {todos, showCompleted, searchText} = this.props;
 
         const renderTodos = () => {
-            if (todos.length === 0) {
-                return <p className="container__message">Nothing To Do</p>
+            const filteredTodos = TodoAPI.filterTodos(todos, showCompleted, searchText);
+
+            if (!filteredTodos.length) {
+                return <p className="container__message">Nothing To Do</p>;
             }
 
-            return TodoAPI.filterTodos(todos, showCompleted, searchText).map((todo) => {
+            return filteredTodos.map((todo) => {
                 return <TodoItem key={todo.id} {...todo} />
             });
         };
