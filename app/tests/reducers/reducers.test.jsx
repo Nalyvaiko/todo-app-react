@@ -45,24 +45,31 @@ describe('Reducers', () => {
             expect(res[0]).toEqual(action.todo);
         });
 
-        it('should toggle todo', () => {
-            const state = [
-                {
-                    id: '123',
-                    text: 'Buy milk',
-                    completed: true,
-                    createdAt: 123456,
-                    completedAt: 123489
-                }
-            ];
-            const action = {
-                type: 'TOGGLE_TODO',
-                id: '123'
-            };
-            const res = todosReducer(deepf(state), deepf(action));
+        it('should update todo', () => {
+            const todos = [{
+                id: '123',
+                text: 'Buy milk',
+                completed: true,
+                createdAt: 123456,
+                completedAt: 123489
+            }];
 
-            expect(res[0].completed).toEqual(false);
-            expect(res[0].completedAt).toEqual(undefined);
+            const updates = {
+                completed: false,
+                completedAt: null
+            };
+
+            const action = {
+                type: 'UPDATE_TODO',
+                id: todos[0].id,
+                updates
+            };
+
+            const res = todosReducer(deepf(todos), deepf(action));
+
+            expect(res[0].completed).toEqual(updates.completed);
+            expect(res[0].completedAt).toEqual(updates.completedAt);
+            expect(res[0].text).toEqual(todos[0].text);
         });
 
         it('should add existing todos', () => {
