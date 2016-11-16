@@ -7,6 +7,7 @@ import TodoApp from 'TodoApp';
 import actions from 'actions';
 import store from 'configureStore';
 import TodoAPI from 'TodoAPI';
+import Login from 'Login';
 
 store.dispatch(actions.startAddTodos());
 
@@ -18,7 +19,12 @@ import 'style!css!sass!applicationStyles';
 
 render (
     <Provider store={store}>
-        <TodoApp />
+        <Router history={hashHistory}>
+            <Route path="/">
+                <Route path="todos" component={TodoApp}/>
+                <IndexRoute component={Login}/>
+            </Route>
+        </Router>
     </Provider>,
     document.getElementById('app')
 );
