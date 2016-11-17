@@ -89,6 +89,23 @@ describe('Reducers', () => {
             expect(res.length).toEqual(1);
             expect(res[0]).toEqual(todos[0]);
         });
+
+        it('should wipe todos on logout', () => {
+            const todos = [{
+                id: '111',
+                text: 'anything',
+                completed: false,
+                completedAt: undefined,
+                createdAt: 33000
+            }];
+            const action = {
+                type: 'LOGOUT',
+                todos
+            };
+            const res = todosReducer(deepf(todos), deepf(action));
+
+            expect(res.length).toEqual(0);
+        });
     });
 
     describe('authReducer', () => {
