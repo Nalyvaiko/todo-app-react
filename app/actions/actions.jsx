@@ -80,6 +80,19 @@ const actions = {
         };
     },
 
+    login(uid) {
+        return {
+            type: 'LOGIN',
+            uid
+        };
+    },
+
+    logout() {
+        return {
+            type: 'LOGOUT'
+        };
+    },
+
     startLogin() {
         return (dispatch, getState) => {
             return firebase.auth().signInWithPopup(githubProvider).then((result) => {

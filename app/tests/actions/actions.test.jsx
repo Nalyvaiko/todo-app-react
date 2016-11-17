@@ -146,4 +146,23 @@ describe('Actions', () => {
             }, done);
         });
     });
+
+    describe('Auth tests', () => {
+        it('should generate login action', () => {
+            const action = {
+                type: 'LOGIN',
+                uid: 'absd1236'
+            };
+            const res = actions.login(action.uid);
+            
+            expect(res).toEqual(action);
+        });
+
+        it('should generate logout action', () => {
+            const action = {type: 'LOGOUT'};
+            const res = actions.logout();
+
+            expect(res).toEqual(action);
+        });
+    });
 });

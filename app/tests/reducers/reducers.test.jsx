@@ -1,7 +1,7 @@
 import expect from 'expect';
 import deepf from 'deep-freeze-strict';
 
-import {searchTextReducer, showCompletedReducer, todosReducer} from 'reducers';
+import {searchTextReducer, showCompletedReducer, todosReducer, authReducer} from 'reducers';
 
 describe('Reducers', () => {
     describe('searchTextReducer', () => {
@@ -88,6 +88,27 @@ describe('Reducers', () => {
 
             expect(res.length).toEqual(1);
             expect(res[0]).toEqual(todos[0]);
+        });
+    });
+
+    describe('authReducer', () => {
+        it('should store uid on login', () => {
+            const auth = {};
+            const action = {
+                type: 'LOGIN',
+                uid: 'abcd123'
+            };
+            const res = authReducer(deepf(auth), deepf(action));
+
+            expect(res).toEqual({uid: action.uid});
+        });
+
+        it('should wipe auth on logout', () => {
+            const auth = {uid: 'abcd123'};
+            const action = {type: 'LOGOUT'};
+            const res = authReducer(deepf(auth), deepf(action));
+
+            expect(res).toEqual({});
         });
     });
 });
