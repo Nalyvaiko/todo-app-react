@@ -14,8 +14,8 @@ export class TodoApp extends Component { // export unconnected version for using
         const {dispatch} = this.props;
         dispatch(actions.startLogout());
     }
-    
-    render () {
+
+    render() {
         return (
             <div>
                 <div className="page-actions">

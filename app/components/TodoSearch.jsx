@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import actions from 'actions';
 
 export class TodoSearch extends Component {
-    render () {
+    render() {
         const {dispatch, showCompleted, searchText} = this.props;
 
         return (

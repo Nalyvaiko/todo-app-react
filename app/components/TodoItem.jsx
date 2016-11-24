@@ -4,7 +4,7 @@ import moment from 'moment';
 import actions from 'actions';
 
 export class TodoItem extends Component {
-    render () {
+    render() {
         const {id, text, completed, createdAt, completedAt, dispatch} = this.props;
         const todoClassName = completed ? 'todo todo-completed' : 'todo';
         const renderDate = () => {

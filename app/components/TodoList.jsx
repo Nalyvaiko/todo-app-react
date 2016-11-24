@@ -5,7 +5,7 @@ import TodoAPI from 'TodoAPI';
 
 export class TodoList extends Component {
 
-    render () {
+    render() {
         const {todos, showCompleted, searchText} = this.props;
 
         const renderTodos = () => {

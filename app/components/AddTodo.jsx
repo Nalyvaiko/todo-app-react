@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import actions from 'actions';
 
 export class AddTodo extends Component {
-    handleSubmit (e) {
+    handleSubmit(e) {
         e.preventDefault();
         const todoText = this.refs.todoText.value;
 
@@ -18,7 +18,7 @@ export class AddTodo extends Component {
         }
     }
 
-    render () {
+    render() {
         return (
             <div className="container__footer">
                 <form onSubmit={this.handleSubmit.bind(this)}>
